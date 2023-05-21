@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to furniture paradise</h1>
+</div>
+
+
+
+<div>
+    <h2>Choose your ideal furniture in our <a asp-controller="Home" asp-action="Catalog">Catalog</a></h2>
+</div>
+<div>
+    <h2>
+        Create your ideal furniture in our @{ if (User.Identity.IsAuthenticated){<a asp-controller="Construct" asp-action="Construct">Constructor</a>}
+            else {<strong>register or sing in for construct</strong> }
+            }
+            </h2>
+</div>
+<div><img src="~/Img/main.jpg"/></div>
+
+

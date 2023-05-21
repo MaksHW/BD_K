@@ -1,0 +1,15 @@
+﻿<div>
+    @{
+        if (User.Identity.IsAuthenticated)
+        {
+            <div>@User.Identity.Name</div>
+            <div>
+                <a asp-area="" asp-controller="Account" asp-action="Logout">Log_out</a>
+            </div>
+        }
+        else
+        {
+            <div>Not authenticated</div>
+        }
+    }
+</div>

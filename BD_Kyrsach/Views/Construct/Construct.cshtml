@@ -1,0 +1,34 @@
+﻿<h2>Construct your beautiful furniture</h2>
+@model BD_Kyrsach.Models.ConstructModel
+<form method="post" asp-controller="Construct" asp-action="Construct">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <label asp-for="FamilyId"></label><br />
+        <input asp-for="FamilyId" />
+        <span asp-validation-for="FamilyId"></span>
+    </div>
+    <div>
+        <label asp-for="TypeofId"></label><br />
+        <input asp-for="TypeofId" />
+        <span asp-validation-for="TypeofId"></span>
+    </div>
+    <div>
+        <label asp-for="Name"></label><br />
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <label asp-for="Price"></label><br />
+        <input asp-for="Price" />
+        <span asp-validation-for="Price"></span>
+    </div>
+    <div>
+        <input type="submit" value="Construct" />
+    </div>
+</form>
+<div>
+    To choose type and family
+    <a asp-controller="Home" asp-action="Button" asp-route-value="6">Typeof</a>
+    <a asp-controller="Home" asp-action="Button" asp-route-value="7">Family</a>
+</div>
+<div><img src="~/Img/construct.jpg" width="1000" height="1000"/></div>

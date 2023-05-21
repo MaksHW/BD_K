@@ -1,0 +1,51 @@
+﻿<h2>Your orders of our beautiful furniture</h2>
+@{var i = 0;}
+<section class="text-center mb-4">
+    @{var item4 = @Model.Item1;
+        var item5 = Model.Item2;}
+    @{for (i = 0; i < @Model.Item1.Count; i++)
+        {
+
+            <div class="row wow fadeIn">
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        FurnitureId: @item4[i].FurnitureId
+                        Date: @item4[i].Date
+                        Number: @item5[i].FurnitureId
+                        Name: @item5[i].Name
+                        Price: @item5[i].Price
+                        <a asp-controller="Order" asp-action="Delete_order" asp-route-value="@item4[i].OrderId">Delete</a>
+                    </div>
+                @{i++;}
+                @if (i == Model.Item1.Count) { break; }
+            <div class="col-lg-3 col-md-6 mb-4">
+                FurnitureId: @item4[i].FurnitureId
+                Date: @item4[i].Date
+                Number: @item5[i].FurnitureId
+                Name: @item5[i].Name
+                Price: @item5[i].Price
+                <a asp-controller="Order" asp-action="Delete_order" asp-route-value="@item4[i].OrderId">Delete</a>
+            </div>
+                @{i++;}
+                @if (i == Model.Item1.Count) { break; }
+            <div class="col-lg-3 col-md-6 mb-4">
+                FurnitureId: @item4[i].FurnitureId
+                Date: @item4[i].Date
+                Number: @item5[i].FurnitureId
+                Name: @item5[i].Name
+                Price: @item5[i].Price
+                <a asp-controller="Order" asp-action="Delete_order" asp-route-value="@item4[i].OrderId">Delete</a>
+            </div>
+                @{i++;}
+                @if (i == Model.Item1.Count) { break; }
+            <div class="col-lg-3 col-md-6 mb-4">
+                FurnitureId: @item4[i].FurnitureId
+                Date: @item4[i].Date
+                Number: @item5[i].FurnitureId
+                Name: @item5[i].Name
+                Price: @item5[i].Price
+                <a asp-controller="Order" asp-action="Delete_order" asp-route-value="@item4[i].OrderId">Delete</a>
+            </div>
+            </div>};
+    }
+</section>
+<div><img src="~/Img/myorder.jpg" width="1200" height="1000"/></div>

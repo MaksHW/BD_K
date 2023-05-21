@@ -1,0 +1,19 @@
+﻿<h2>Order our beautiful furniture</h2>
+@model BD_Kyrsach.Models.OrderModel
+<form method="post" asp-controller="Order" asp-action="Order">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <label asp-for="Date"></label><br />
+        <input asp-for="Date" />
+        <span asp-validation-for="Date"></span>
+    </div>
+    <div>
+        <label asp-for="FurnitureId"></label><br />
+        <input asp-for="FurnitureId" />
+        <span asp-validation-for="FurnitureId"></span>
+    </div>
+    <div>
+        <input type="submit" value="Order" />
+    </div>
+</form>
+<p><img src="~/Img/order.jpg" /></p>

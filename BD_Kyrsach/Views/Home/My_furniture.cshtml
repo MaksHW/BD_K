@@ -1,0 +1,46 @@
+﻿<h2>Catalog of your beautiful furniture</h2>
+@using System.Text.RegularExpressions;
+
+@{var i = 0;}
+<section class="text-center mb-4">
+    @{var item = @Model;}
+    @{for (i = 0; i < @Model.Count; i++)
+        {
+
+            <div class="row wow fadeIn">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    Number: @item[i].FurnitureId
+                    Name: @item[i].Name
+                    Price: @item[i].Price
+                    <a asp-controller="Order" asp-action="Order" asp-route-value="@item[i].FurnitureId">Order</a>
+                </div>
+                @{i++;}
+                @if (i == Model.Count) { break; }
+                <div class="col-lg-3 col-md-6 mb-4">
+                    Number: @item[i].FurnitureId
+                    Name: @item[i].Name
+                    Price: @item[i].Price
+                    <a asp-controller="Order" asp-action="Order" asp-route-value="@item[i].FurnitureId">Order</a>
+                </div>
+                @{i++;}
+                @if (i == Model.Count) { break; }
+                <div class="col-lg-3 col-md-6 mb-4">
+                    Number: @item[i].FurnitureId
+                    Name: @item[i].Name
+                    Price: @item[i].Price
+                    <a asp-controller="Order" asp-action="Order" asp-route-value="@item[i].FurnitureId">Order</a>
+                </div>
+                @{i++;}
+                @if (i == Model.Count) { break; }
+                <div class="col-lg-3 col-md-6 mb-4">
+                    Number: @item[i].FurnitureId
+                    Name: @item[i].Name
+                    Price: @item[i].Price
+                    <a asp-controller="Order" asp-action="Order" asp-route-value="@item[i].FurnitureId">Order</a>
+                </div>
+            </div>};
+    }
+</section>
+
+
+<div><img src="~/Img/myfur.jpg" /></div>

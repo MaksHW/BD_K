@@ -1,0 +1,92 @@
+﻿@using System.Text.RegularExpressions;
+@foreach (var item in @Model)
+{
+    int cat = 0;
+    Regex regex = new Regex(@"\w*User$");
+    MatchCollection matches = regex.Matches(item.ToString());
+    if (matches.Count > 0) { cat = 1; }
+    Regex regex2 = new Regex(@"\w*Order$");
+    MatchCollection matches2 = regex2.Matches(item.ToString());
+    if (matches2.Count > 0) { cat = 3; }
+    Regex regex3 = new Regex(@"\w*Furniture$");
+    MatchCollection matches3 = regex3.Matches(item.ToString());
+    if (matches3.Count > 0) { cat = 4; }
+    Regex regex4 = new Regex(@"\w*UserFur$");
+    MatchCollection matches4 = regex4.Matches(item.ToString());
+    if (matches4.Count > 0) { cat = 5; }
+    Regex regex5 = new Regex(@"\w*Typeof$");
+    MatchCollection matches5 = regex5.Matches(item.ToString());
+    if (matches5.Count > 0) { cat = 6; }
+    Regex regex6 = new Regex(@"\w*Family$");
+    MatchCollection matches6 = regex6.Matches(item.ToString());
+    if (matches6.Count > 0) { cat = 7; }
+    switch (cat)
+    {
+        case 1:
+            <div>
+                Userid: @item.UserId
+                <br />
+                Age: @item.Age
+                <br />
+                FirstName: @item.FirstName
+                <br />
+                LastName; @item.LastName
+                <br />
+                Email: @item.Email
+                <br />
+                Phone: @item.Phone
+                <br />
+                Balance: @item.Balance
+                <br />
+                Password: @item.Password
+                <hr />
+            </div>
+            break;
+        case 3:
+            <div>
+                OrderId: @item.OrderId<br />
+                UserfurnitureId: @item.UserfurnitureId<br />
+                Date: @item.Date<br />
+                <hr />
+            </div>
+            break;
+        case 4:
+            <div>
+                FurnitureId: @item.FurnitureId<br />
+                FamilyId: @item.FamilyId<br />
+                TypeofId: @item.TypeofId<br />
+                Name: @item.Name<br />
+                Price: @item.Price<br />
+                <hr />
+            </div>
+            break;
+        case 5:
+            <div>
+                UserfurnitureId: @item.UserfurnitureId<br />
+                UserId: @item.UserId<br />
+                FurnitureId: @item.FurnitureId<br />
+                <hr />
+            </div>
+            break;
+        case 6:
+            <div>
+                TypeofId: @item.TypeofId<br />
+                Title: @item.Title<br />
+                <hr />
+            </div>
+            break;
+        case 7:
+            <div>
+                FamilyId: @item.FamilyId<br />
+                Name: @item.Name<br />
+                Description: @item.Description<br />
+                <hr />
+            </div>
+            break;
+        default:
+            <div>
+                Error
+            </div>
+            break;
+    }
+}
